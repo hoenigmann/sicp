@@ -34,5 +34,16 @@
 (define a 3)
 (define b (+ a 1))
 
+(define pi 3.14159)
+(define radius 10)
+(* pi (* radius radius))
+(define circumference (* 2 pi radius))
+circumference
+(define radius 5)
+circumference
+
+
+
+
 
 
