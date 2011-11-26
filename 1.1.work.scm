@@ -77,8 +77,11 @@ isi
 ;;; the expansion.  When the evaluation is is carried out and the if predicate is found to be true
 ;;; only the true consquent will be evaluated.
 
+(define (p) (p))
 
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
 
-
-
-
+(test (delay 0) (delay (p)))
