@@ -1,0 +1,370 @@
+    1  emacs
+    2  emacs
+    3  defaults write com.apple.NetworkBrowser EnableODiskBrowsing -bool true
+    4  defaults write com.apple.NetworkBrowser ODSSupported -bool true
+    5  ls
+    6  cd  VirtualBox\ VMs/
+    7  ls
+    8  rmdir Win*
+    9  rmdir -r Win*
+   10  rmdir
+   11  help remdir
+   12  help rmdir
+   13  rmdir
+   14  rmdir -p Win*
+   15  rm -rf Win*
+   16  ls
+   17  cd ..
+   18  pwd
+   19  ls
+   20  cd Documents/
+   21  ls
+   22  java -version
+   23  java
+   24  java
+   25  java -version
+   26  javac
+   27  javac -version
+   28  VBoxManage guestproperty enumerate "win64bit-7"
+   29  VBoxControl
+   30  pwd
+   31  ls
+   32  cd ..
+   33  ls
+   34  cd ..
+   35  ls
+   36  cd ..
+   37  ls
+   38  cd `
+   39  /Users/albert/Downloads/android-sdk-macosx/tools/android ; exit;
+   40  /Users/albert/Downloads/android-sdk-macosx/tools/android ; exit;
+   41  /Users/albert/Downloads/eclipse/Eclipse.app/Contents/MacOS/eclipse ; exit;
+   42  /Users/albert/Downloads/eclipse/Eclipse.app/Contents/MacOS/eclipse ; exit;
+   43  VBoxManage setextradata "win64bit-7" "CustomVideoMode1" "1440x900x32"
+   44  ssh root@69.164.196.46
+   45  ssh root@69.164.196.46
+   46  gvim
+   47  vim
+   48  ls /
+   49  cd private
+   50  ls
+   51  cd /
+   52  ls
+   53  cd private
+   54  ls
+   55  cd ..
+   56  ls
+   57  cd etc
+   58  pwd
+   59  cd etc
+   60  ls
+   61  cd /etc
+   62  ls
+   63  ls
+   64  cd ~
+   65  ls
+   66  cp Downloads/h2 /swdev
+   67  cp -d Downloads/h2 /swdev
+   68  help cp
+   69  cp -h
+   70  man cp
+   71  cp -R Downloads/h2 /swdev
+   72  cd /swdev
+   73  ls
+   74  cd h2
+   75  ls
+   76  cd docs
+   77  ls
+   78  safari
+   79  ls
+   80  cd ..
+   81  ls
+   82  cd /swdev/h2
+   83  ls
+   84  cd /swdev
+   85  ls
+   86  cd h2
+   87  ls
+   88  cd bin
+   89  ls
+   90  java -cp *.jar org.h2.tools.Server
+   91  ls
+   92  pwd
+   93  cd /
+   94  ls
+   95  cd swdev
+   96  ls
+   97  cd h2
+   98  ls
+   99  cd bin
+  100  ls
+  101  java -cp h2*.jar org.h2.tools.Server
+  102  ps
+  103  ps -a
+  104  ps
+  105  cd /swdev
+  106  ls
+  107  cd h2
+  108  ls
+  109  cd bin
+  110  java -cp *.jar org.h2.tools.Server
+  111  java -cp *.jar org.h2.tools.Server
+  112  curl
+  113  curl http://localhost:8080/wodplan/spring/movement/tags
+  114  curl http://localhost:8080/wodplan/spring/movement/tags json
+  115  curl
+  116  curl --help
+  117  grep < curl --help
+  118  curl --help > grep json
+  119  curel --help | grep json
+  120  curl --help | grep json
+  121  curl --help
+  122  curl --help
+  123  curl http://localhost:8080/wodplan/spring/movement/tags
+  124  emacs
+  125  java -cp *.jar org.h2.tools.Server
+  126  which scheme
+  127  which emacs
+  128  which scheme
+  129  mit-scheme
+  130  which MIT/GNU Scheme
+  131  which "MIT/GNU Scheme
+  132  "
+  133  which *scheme
+  134  pwd
+  135  cd ..
+  136  cd ..
+  137  cd..
+  138  cd..
+  139  cd ..
+  140  pwd
+  141  cd Downloads
+  142  ls
+  143  cd Users
+  144  cd albert
+  145  ls
+  146  cd Downloads
+  147  tar xvf mit-scheme-9.1.1-x86-64.tar.gz
+  148  ls
+  149  tar xvf mit-scheme-9.1.1-x86-64.tar
+  150  ls
+  151  cd mit-scheme-9.1.1
+  152  ls
+  153  cd src
+  154  ls
+  155  ./configure
+  156  pwd
+  157  gcc
+  158  gcc
+  159  which gcc
+  160  ./configure
+  161  pwd
+  162  make compile-microcode
+  163  pwd
+  164  pwd
+  165  ls
+  166  cd microcode
+  167  ls
+  168  cd ..
+  169  ls
+  170  ls com*
+  171  make
+  172  vi README
+  173  pwd
+  174  ls
+  175  vi README.txt 
+  176  pwd
+  177  make compile-microcode
+  178  make
+  179  ./configure
+  180  pwd
+  181  cp -R "/Volumes/MIT\:GNU\ Scheme/Contents/Resources" /usr/local/lib/mit-scheme-i386
+  182  cp -R /Volumes/MIT\:GNU\ Scheme/Contents/Resources /usr/local/lib/mit-scheme-i386
+  183  cp -R /Volumes/MIT\:GNU\ Scheme/ /usr/local/lib/mit-scheme-i386
+  184  sudo cp -R /Volumes/MIT\:GNU\ Scheme/ /usr/local/lib/mit-scheme-i386
+  185  sudo cp -R /Volumes/MIT\:GNU\ Scheme/Contents/Resources /usr/local/lib/mit-scheme-i386
+  186  sudo cp -R /Volumes/MIT\:GNU\ Scheme/Contents/Resources /usr/local/lib/mit-scheme-x86-64
+  187  sudo cp -R /Volumes/MIT\:GNU\ Scheme/ /usr/local/lib/mit-scheme-x86-64
+  188  cd /usr/local/lib/
+  189  cd /usr/
+  190  cd local
+  191  ls
+  192  sudo /Volumes/MIT\:GNU\ Scheme/
+  193  cd /Volumes/MIT\:GNU\ Scheme/
+  194  ls
+  195  cd MIT\:GNU\ Scheme.app/
+  196  ls
+  197  ls
+  198  cd Contents
+  199  cd /Applications
+  200  pwd
+  201  cd MIT\:GNU\ Scheme.app/
+  202  ls
+  203  cd Contents
+  204  cd Resources/
+  205  ls
+  206  ls
+  207  ls mit*
+  208  cd mit-scheme
+  209  mit-scheme
+  210  ./mit-scheme
+  211  pwd
+  212  pwd
+  213  ls
+  214  cd runtime
+  215  ls
+  216  cd ..
+  217  ls
+  218  pwd
+  219  cd ..
+  220  ls
+  221  pwd
+  222  cd ..
+  223  ls
+  224  cd Contents
+  225  ls
+  226  cd MacOS
+  227  ls
+  228  cd macosx-starter 
+  229  ls
+  230  pwd
+  231  ls
+  232  macosx-starter
+  233  ./macosx-starter 
+  234  pwd
+  235  cd ..
+  236  cd Resources
+  237  ls
+  238  ls
+  239  cd lib
+  240  ls
+  241  cd ..
+  242  ls
+  243  vi mit-scheme
+  244  pwd
+  245  sudo ln -s /Applications/MIT:GNU Scheme.app/Contents/Resources/mit-scheme /usr/bin/scheme
+  246  cd usr
+  247  cd /usr
+  248  cd bin
+  249  ls
+  250  cd scheme
+  251  scheme
+  252  pwd
+  253  sudo ln -s /Applications/MIT:GNU Scheme.app/Contents/Resources/mit-scheme /usr/bin/scheme
+  254  cd /Downloads
+  255  cd /users
+  256  ls
+  257  cd albert
+  258  cd Download
+  259  ls
+  260  cd Downloads/
+  261  ls
+  262  cd mit-scheme-c-9.1.1
+  263  ls
+  264  cd src
+  265  ls
+  266  etc/make-liarc.sh
+  267  make install
+  268  sudo make install
+  269  scheme
+  270  which scheme
+  271  hello
+  272  vi
+  273  cool green
+  274  emacs
+  275  pwd
+  276  cd /usr/share
+  277  ls
+  278  cd lib
+  279  cd emacs
+  280  ls
+  281  cd 22.1/
+  282  ls
+  283  cd lisp
+  284  ls
+  285  cd ..
+  286  cd ..
+  287  ls
+  288  find elisp
+  289  find -r elisp
+  290  cd ..
+  291  cd find / -r elisp
+  292  find / -type d -name "elisp" 2> /dev/null
+  293  find -name elisp -type d
+  294  find --name elisp -type d
+  295  pwd
+  296  cd emacs
+  297  ls
+  298  cd site-lisp/
+  299  ls
+  300  cd ..
+  301  pwd
+  302  ls
+  303  cd 22.1/
+  304  ls
+  305  cd lisp
+  306  ls
+  307  cd /usr/share/emacs/
+  308  ls
+  309  cd 22.1
+  310  ls
+  311  cd lisp
+  312  ls
+  313  ls x*
+  314  cd Users
+  315  cd /
+  316  ls
+  317  cd usr
+  318  ls
+  319  cd ..
+  320  ls
+  321  cd Users
+  322  ls
+  323  cd albert
+  324  ls
+  325  ls -all
+  326  emacs .emacs.d/
+  327  emacs .emacs.d
+  328  ls .em*
+  329  pwd
+  330  ls
+  331  ls -akk
+  332  ls -a
+  333  cd .emacs.d/
+  334  ls
+  335  pwd
+  336  cd ..
+  337  emacs .emacs
+  338  emacs
+  339  cp /Downloads/xcheme.elc /usr/share/emacs/22.1/lisp
+  340  cd users
+  341  cd Users
+  342  cd /Users
+  343  ls
+  344  cd albert
+  345  ls
+  346  pwd
+  347  cp /Users/albert/Downloads/xscheme.elc /usr/share/emacs/22.1/lisp/
+  348  sudo cp /Users/albert/Downloads/xscheme.elc /usr/share/emacs/22.1/lisp/
+  349  emacs
+  350  emacs
+  351  git commit -m README
+  352  git commit -am "readme commit"
+  353  git push
+  354  git add 1.1.scm
+  355  git commit -am
+  356  git commit -am "first solution"
+  357  git push origin
+  358  history
+  359  git commit -am "second commit"
+  360  git push
+  361  history
+  362  ls
+  363  git add 1.1.work.scm
+  364  ;s
+  365  ls
+  366  git commit
+  367  git commit -mc "third commit"
+  368  git -mc commit "third commit"
+  369  history
+  370  history > learngit.txt
