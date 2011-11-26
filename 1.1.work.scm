@@ -27,3 +27,6 @@
 
 ;;; Eager vs lazy, the order in which the substitution takes place, applicative or normal.
 ;;; Ich hab etwas gefeunden...
+
+(define isi 15)
+isi
