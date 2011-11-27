@@ -80,8 +80,47 @@ isi
 (define (p) (p))
 
 (define (test x y)
-  (if (= x 0)
+  (if (= (force x) 0)
       0
       y))
 
+(test (delay 0) (p))
+
+
+
+
+(define (test x y)
+  (if (= (force x) 0)
+      0
+      (force y)))
+
 (test (delay 0) (delay (p)))
+
+(define-syntax delay
+  (sc-macro-transformer
+   (lambda (exp env)
+     `(lambda () ,(cadr exp)))))
+
+(define-syntax normal-order-if
+  (sc-macro-transformer
+   (lambda (exp env)
+     (let ((predicate (cadr exp))
+	   (true-arm (caddr exp))
+	   (false-arm (cadddr exp)))
+       (if (eval predicate)
+	   (eval true-arm)
+	   (eval false-arm))))))
+
+(define-syntax applicative-order-if
+  (sc-macro-transformer
+   (lambda (exp env)
+     (let ((predicate (eval (cadr exp)))
+	   (true-arm (eval (caddr exp)))
+	   (false-arm (eval (cadddr exp))))
+       (if predicate
+	   true-arm
+	   false-arm)))))
+
+(define (force promise) (promise))
+
+(force (delay (/ 5 0)))
