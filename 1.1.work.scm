@@ -124,3 +124,26 @@ isi
 (define (force promise) (promise))
 
 (force (delay (/ 5 0)))
+
+(define (abs x)
+  (cond ( (< x 0) (- x)) 
+	(else x)))
+
+(define (good-enough? guess x)
+  (< (abs (- (* guess guess) x)) 0.001))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (improve-guess guess x)
+  (average guess (/ x guess)))
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (square-iter (improve-guess guess x) x)))
+
+(define (sqrt x) (square-iter 1.0 x))
+
+(sqrt 4)
+
