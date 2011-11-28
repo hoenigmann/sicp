@@ -147,3 +147,9 @@ isi
 
 (sqrt 4)
 
+;;; Exercise 1.6
+;; The parameters of the then clause and the else clause will both be
+;; evaluated for every case of the predicate.  Therefore, for every call
+;; to sqrt-iter, another call to sqrt iter will be generated, resulting in
+;; infinite recursion, regardless of the guess is good enough.
+
