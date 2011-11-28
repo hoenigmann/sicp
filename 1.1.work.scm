@@ -153,3 +153,7 @@ isi
 ;; to sqrt-iter, another call to sqrt iter will be generated, resulting in
 ;; infinite recursion, regardless of the guess is good enough.
 
+;;; 1.7 Exercise
+;;; For small numbers less than 1 the good-enough? because the absolute value
+;;; of the square of the guess converges to a small value very quickly. good-enough?
+;;; also makes picking a starting value a pain.  For larger numbers,
