@@ -157,3 +157,18 @@ isi
 ;;; For small numbers less than 1 the good-enough? because the absolute value
 ;;; of the square of the guess converges to a small value very quickly. good-enough?
 ;;; also makes picking a starting value a pain.  For larger numbers,
+
+;;; 1.8 Exercise
+(define (cubert x)
+  (define (cubert-iter guess)
+    (if (good-enough? guess)
+	guess
+	(cubert-iter (improve guess))))
+  (define (good-enough? guess)
+    (< (abs (- (* guess guess guess) x)) 0.0001))
+  (define (improve guess)
+    (/ (+ (/ x (* guess guess)) (* 2 guess)) 3))
+  (cubert-iter 1.0)
+)
+
+(cubert 27)
