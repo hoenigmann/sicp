@@ -172,3 +172,59 @@ isi
 )
 
 (cubert 27)
+
+;;; Exercise 1.10
+(A 0 n)
+f (n) = 2n
+
+(A 1 n)
+(A 0 (A 1 (- n 1)))
+(* 2 (A 1 (- n 1)))
+(* 2 (A 0 (A 1 (- n 2))))
+(* 2 (* 2 (A 0 (A 1 (- n 3)))))
+(* 2 (* 2 (* 2 (A 0 (A 1 (- n 4))))))
+...
+
+g (n) = 2^n 
+
+(A 2 n)
+(A 1 (A 2 (- n 1)))
+(A 0 (A 1 (- (A 2 (- n 1)) 1)))
+(A 0 (A 0 (A 1 (- (A 2 (- n 1)) 1)))) ...
+
+;;; Ackerman is parameter of ackerman
+
+h (n) = 
+
+;;;
+( 0 1 2 3 5 8 13 21 34)
+
+;;; Counting Change Example
+(define (first-denom kinds-of-coins)
+  (cond ((= kinds-of-coins 1) 1)
+        ((= kinds-of-coins 2) 5)
+        ((= kinds-of-coins 3) 10)
+        ((= kinds-of-coins 4) 25)
+        ((= kinds-of-coins 5) 50)))
+
+(define (ways amount)
+  (define (count amount kinds-coins)
+    (cond  ((= amount 0) 1)
+	   ( (or (< amount 0) (= kinds-coins 0)) 0)
+	   (else (+
+		  (count amount (- kinds-coins 1))
+		  (count (- amount (first-denom kinds-coins)) kinds-coins)
+		  ))))
+  (count amount 5))
+
+(ways 100)
+(ways 1)
+(ways 2)
+(ways 5)
+(ways 10)
+(ways 11)
+(ways 25)
+(ways 500)
+(ways 600)
+(ways 601)
+
