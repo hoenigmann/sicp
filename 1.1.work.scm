@@ -299,3 +299,20 @@ o(define (first-denom kinds-of-coins)
 
 (simp identity 0 5.0 100)
 ;;;; wrong answer did i at least get the idea....
+
+;;; Exercise 1.30
+(define (sum term a next b)
+  (define (iter a result)
+    (if (> a b)
+	result
+	(iter (next a) (+ (term a) result))))
+  (iter a 0)
+)
+
+(define (next a) 
+  (+ a 1))
+
+(sum identity 1 next 5)
+
+;;; Exercise 1.31
+
