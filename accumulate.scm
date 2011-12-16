@@ -33,3 +33,25 @@
   (accumulate-iterative + 0 term a next b))
 
 (sum square 1 inc 4)
+
+(define (accumulate-filt filter combiner null-value term a next b)
+  (define (iter a result)
+    (if (> a b) 
+	result
+	(if (filter a)
+	    (iter (next a) result)
+	    (iter (next a) (combiner result (term a))))))
+  (iter a null-value)
+)
+
+;;; Add the evens from one to 10.
+(accumulate-filt (lambda (x) (= (modulo x 2) 1 ))
+		 +
+		 0
+		 (lambda (x) x)
+		 1
+		 (lambda (x) (+ x 1))
+		 10)
+
+;;; Does scheme have built in modulo operation?
+(modulo 5 4)
