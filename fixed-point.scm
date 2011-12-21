@@ -8,4 +8,5 @@
       (if (close-enough guess next)
 	  guess
 	  (try next))))
+  (try first-guess)
 )
