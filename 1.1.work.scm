@@ -314,5 +314,9 @@ o(define (first-denom kinds-of-coins)
 
 (sum identity 1 next 5)
 
-;;; Exercise 1.31
+;;; Exercise 1.34
+(define (f g)
+  (g 2))
 
+(f f)
+(error "Values are shit" 2)

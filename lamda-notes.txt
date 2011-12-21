@@ -17,12 +17,15 @@
 
 ;;; bind variables with special form let
 ;;; (let (<variable> <expression>)
-;;;    	 (<variable> <expression>)...)
-;;;	 <body>
+;;;    	 (<variable> <expression>)...
+;;;	 <body>)
 
 (define (outside x y)
-	(let (a (+ x 1))
-	     (b (+ y 1)))
+	(let ( (a (+ x 1))
+	       (b (+ y 1)) )
 	(+ (* x a) (+ y b))
+	)
 )
+
+;;; let is syntatic sugar to use in place of a lambda binding expression.
 	
