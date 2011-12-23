@@ -7,7 +7,6 @@
   (iter 1))
 
 (/ 1.0 (cont-frac (lambda (x) 1.0) (lambda (x) 1.0) 30))
-(/ 1 0.618033)
 
 ;; Iterative process implementation.
 (define (cont-frac-iter n d k)
