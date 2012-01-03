@@ -43,35 +43,5 @@ car
   (iter items 0))
 (length squares)
 
-(define (same-parity . z)
-  (display z)
-  (newline)
-  (let (
-	(even (lambda (x) (= (remainder x 2) 0)))
-	(odd (lambda (x) (= (remainder x 2) 1)))
-	(iter (lambda (pick rest new) 
-		(cond ((pick (car rest)) (iter pick (cdr rest) (cons new (car rest))))
-		      (else (iter pick (cdr rest) new))))))
-    (cond ((null? z) z)
-	  ((even (car z)) (iter even z '() ))
-	  (else (iter odd z '())))))
 
-(RESTART 1)
-(same-parity 1 2 3)
 
-(define (same-parity . z)
-  (display z)
-  (newline)
-  (let (
-	(even (lambda (x) (= (remainder x 2) 0)))
-	(odd (lambda (x) (= (remainder x 2) 1))))
-    (define iter (lambda (pick rest) 
-		(cond ((null? rest) '() )
-		      ((pick (car rest)) (cons (car rest) (iter pick (cdr rest))))
-		      (else (iter pick (cdr rest))))))
-    (cond ((null? z) z)
-	  ((even (car z)) (iter even z))
-	  (else (iter odd z)))))
-
-(RESTART 1)
-(same-parity 1 2 3)
