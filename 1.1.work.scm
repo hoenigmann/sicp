@@ -314,6 +314,15 @@ o(define (first-denom kinds-of-coins)
 
 (sum identity 1 next 5)
 
+
+;;; Exercise 1.31 
+(define (product term a next b)
+  (define (iter a result)
+    (if (a > b)
+	result
+	(iter (next a) next (* a result)))))
+
+(product identity 1 (lambda (x) (+ x 1)) 4)
 ;;; Exercise 1.34
 (define (f g)
   (g 2))
