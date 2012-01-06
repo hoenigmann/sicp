@@ -2,7 +2,9 @@
 
 (define  (plus4 x) (+ x 4))
 (define plus4 (lambda (x) (+ x 4)))
-
+;;; above just short for:
+(define (plus4 x) 
+	(+ x 4))
 ;;;bind variables with a procedure
 (define (outside x y)
 	(define (binder a b)
@@ -21,11 +23,15 @@
 ;;;	 <body>)
 
 (define (outside x y)
-	(let ( (a (+ x 1))
+	(let <name> ( (a (+ x 1))
 	       (b (+ y 1)) )
 	(+ (* x a) (+ y b))
 	)
 )
 
-;;; let is syntatic sugar to use in place of a lambda binding expression.
+;;; let is syntactic sugar to use in place of a lambda binding expression.
 	
+(define (f g)
+	<body>)
+
+(f (lambda (x) (x)))

@@ -1,4 +1,4 @@
-(define (reverse items)
+(define (deep-reverse items)
   (define (rev-iter items new)
     (cond ((null? items) new)
 	  ((not (pair? (car items))) (rev-iter (cdr items) (cons (car items) new)))
@@ -13,7 +13,7 @@
    x
 
 (trace reverse)
-(reverse x)
+(deep-reverse x)
 
 
 
