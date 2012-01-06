@@ -10,10 +10,12 @@
 ;;; Left branch and Right branch selector
 (define (left-branch branch)
   (car branch))
-
 (define (right-branch branch)
   (cadr branch))
-
+(define (branch-length x)
+  (car x))
+(define (branch-structure x)
+  (cadr x))
 (define x (make-mobile 4 5))
 
 (left-branch x)
