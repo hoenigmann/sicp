@@ -45,8 +45,12 @@
 		   (if (is-mobile? right)
 		       (total-weight right)
 		       right)))
-	 (balanced? left)
-	 (balanced? right))))
+	 (if (is-mobile? left)
+	     (balanced? left)
+	     #t)
+	 (if (is-mobile? right)
+	     (balanced? right)
+	     #t))))
 
 
 (define branch (make-branch 5 4))
@@ -55,9 +59,11 @@
 
 (define mob1 (make-mobile branch branch-with-mobile))
 (define mob2 (make-mobile branch-with-mobile branch))
-(define branch1 (make-branch 3 mob1))
-(define branch2 (make-branch 9 mob2))
+(define branch1 (make-branch 3 mob2))
+(define branch2 (make-branch 3 mob2))
 
 (define root (make-mobile branch1 branch2))
 (total-weight root)
-(balanced root)
+(balanced? root)
+(balanced? mobile)
+(balanced? mob2)
