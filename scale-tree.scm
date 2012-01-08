@@ -1,0 +1,5 @@
+(define (scale-tree tree factor)
+  (cond ((null? tree) '())
+	((not (pair? tree)) (* factor tree))
+	(else (cons (scale-tree (car tree)) 
+		    (scale-tree (cdr tree))))))
