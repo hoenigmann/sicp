@@ -4,7 +4,7 @@
 
 (define (append seq1 seq2) (accumulate cons seq2 seq1))
 (define (length sequence) 
-  (accumulgate (lambda (x y) (+ 1 y)) 0 sequence))
+  (accumulate (lambda (x y) (+ 1 y)) 0 sequence))
 
 (define z (list 1 2 3))
 (define incra (lambda (x) (+ x 1)))
