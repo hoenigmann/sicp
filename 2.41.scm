@@ -30,16 +30,10 @@
 
 (define (prime-sum? pair)
   (prime? (+  (car pair) (cadr pair))))
-(RESTART 1)
-(car (list 1 2))
-(prime-sum? (list 3 2))
 
 (define (unique-pairs n)
   (flatmap (lambda (i) (map (lambda (j) (list i j)) (enumerate-interval 1 (- i 1)))) 
 	   (enumerate-interval 1 n)))
-
-(enumerate-interval 1 5)
-(unique-pairs 5)
 
 (define (make-pair-sum pair)
       (list (car pair) (cadr pair) (+ (car pair) (cadr pair))))
@@ -48,19 +42,25 @@
   (map (lambda (pair) (make-pair-sum pair))
    (filter prime-sum? (unique-pairs n))))
 
-(prime-sum-pairs 5)
+(define (triple-to-n-sum n s)
+  (define (less-than-sum? triple)
+    (< (+ (car triple) (cadr triple) (caddr triple)) s))
+  (filter less-than-sum? (flatmap (lambda (i) 
+	      (map (lambda (j) 
+		     (map (lambda (k) (list i j k))
+			  (enumerate-interval 1 (- j 1)))) 
+		   (enumerate-interval 2 (- i 1)))) 
+	    (enumerate-interval 3 n))))
 
-;;; how would you implement iteration within iteration, or nested iteration naively?
-;;; "inner" loop and "outer" loop:
+;;; clearer and concise second attempt
+(define (triple-to-n-sum n s)
+  (define (less-than-sum? triple)
+    (< (+ (car triple) (cadr triple) (caddr triple)) s))
+  (filter less-than-sum? (flatmap (lambda (i) (map (lambda (pair) (list i (car pair) (cadr pair)))
+						   (unique-pairs (- i 1))))
+				  (enumerate-interval 3 n))))
 
-(define (inner-iter count n result)
-  (if (< count n)
-      (inner-iter (+ count 1) n (cons (cons count n) result))
-      result))
+;;; This attempt works because nested flatmaps are used.  One flatmap used inside the function and one used
+;;; inside the function: unique-pairs (combine to get rid of empty lists?)
+(triple-to-n-sum 9 10)
 
-(define (iter start stop result)
-  (if (<= start stop)
-      (iter (+ 1 start) stop (cons (inner-iter 1 start '()) result))
-      result))
-
-(iter 1 4 '())
