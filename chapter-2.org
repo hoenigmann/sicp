@@ -1,0 +1,66 @@
+Going to try doing the rest of chapter 2 in org-mode.
+* TODO 2.43
+* DONE 2.42
+  CLOSED: [2012-01-24 Tue 17:23]
+  - CLOSING NOTE [2012-01-24 Tue 17:23] \\
+    Originally thought rest of queens was a list of row, col pairs.  More
+    space efficient is to represent just the rows and index of them is the column.
+  Aha! =rest-of-queens= is a list of integers corresponding to rows.
+
+  #+BEGIN_SRC scheme :tangle 2.42.scm
+    (i-solved-n-queens 8)
+** DONE Why do I need =k= for =safe?=
+   CLOSED: [2012-01-24 Tue 22:19]
+   - CLOSING NOTE [2012-01-24 Tue 22:19] \\
+     Done now.
+  #+END_SRC
+   CLOSED: [2012-01-24 Tue 17:25]
+   - CLOSING NOTE [2012-01-24 Tue 17:25] \\
+     See above: list of rows.
+* N-Queens
+  biatch, this is a significant point to be at....
+  using enumerate, filter, map, flatmap, map with function that takes
+  function?
+* 2.42 Problem
+  #+BEGIN_SRC scheme :tangle n-queens.scm
+    (define (adjoin-position row col safes)
+      (cons row safes))
+    
+    (define (empty-board)
+      '())
+    
+    (define (safe? col positions)
+      (define (diag-safe? col positions)
+        (let ((first (car positions)))
+          (map
+           (lambda (x) (= (+  ) (+  ))))))
+      (diag-safe? col positions))
+    
+    (define (queens board-size)
+      (define (queen-cols k)
+        (if (= k 0)
+            (list empty-board)
+            (filter
+             (lambda (positions) (safe? k positions))
+             (flatmap
+              (lambda (rest-of-queens)
+                (map (lambda (new-row)
+                       (adjoin-position new-row
+                                        k
+                                        rest-of-queens))
+                     (enumerate-interval 1 board-size)))  
+              (queen-cols (- k 1))))))
+      (queen-cols board-size))
+    
+    (define (flatmap proc seq)
+            (accumulate append nil (map proc seq)))
+    
+    ;;; rest-of-queens is a way to place k − 1 queens in the first k − 1 columns
+    
+    
+  #+END_SRC
+
+  Description of code solution above:
+  - 
+
+* 2.43

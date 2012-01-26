@@ -1,0 +1,170 @@
+* bash
+  This is how you setup your path in BASH:
+
+  #+BEGIN_SRC sh
+    export PATH=/usr/local/bin:$PATH
+    
+  #+END_SRC
+  Then with the /usr/local/bin at the front of the path the emacs is
+  now a executable script (which emacs) that calls the emacs versions
+  24. Then modified init.el file according to [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]]:
+
+      #+BEGIN_SRC emacs-lisp
+        (require 'package)
+        (add-to-list 'package-archives
+                     '("marmalade" . "http://marmalade-repo.org/packages/") t)
+        (package-initialize)
+        
+        (when (not package-archive-contents)
+          (package-refresh-contents))
+        
+        ;; Add in your own as you wish:
+        (defvar my-packages
+          '(
+            haskell-mode
+            starter-kit
+            starter-kit-bindings
+            starter-kit-eshell
+            starter-kit-lisp
+            )
+          "A list of packages to ensure are installed at launch.")
+        
+        (dolist (p my-packages)
+          (when (not (package-installed-p p))
+            (package-install p)))
+      #+END_SRC
+
+      #+BEGIN_SRC emacs-lisp
+        (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+        
+        (define-skeleton org-mode-src-skel
+          "Insert #+BEGIN_SRC <source>...#+END_SRC blocks."
+          "Source: "
+          >
+          "#+BEGIN_SRC " str
+          \n
+          _
+          \n
+          "#+END_SRC"
+          > \n)
+        
+        (define-skeleton org-mode-example-skel
+          "Insert #+BEGIN_EXAMPLE...#+END_EXAMPLE blocks."
+          nil
+          >
+          "#+BEGIN_EXAMPLE"
+          \n
+          _
+          \n
+          "#+END_EXAMPLE"
+          > \n)
+        
+        (define-skeleton org-mode-quote-skel
+          "Insert #+BEGIN_QUOTE...#+END_QUOTE blocks."
+ nil
+          >
+          "#+BEGIN_QUOTE"
+          \n
+          _
+          \n
+          "#+END_QUOTE"
+          > \n)
+        
+        (add-hook
+         'org-mode-hook
+         (lambda ()
+           (define-key org-mode-map (kbd "C-c C-x C-s") 'org-mode-src-skel)
+           (define-key org-mode-map (kbd "C-c C-x C-q") 'org-mode-quote-skel)
+           (define-key org-mode-map (kbd "C-c C-x C-e") 'org-mode-example-skel)))
+        
+        (setq org-return-follows-link t)
+      #+END_SRC
+* org mode
+  [[http://orgmode.org/org.html#Editing-source-code][This]] is how you'd edit source code. 
+[]
+* Notes
+** Sat Jan 21 16:33:51 PST 2012
+   Had some conversation with Joe Schmo, in which he said:
+
+   #+BEGIN_QUOTE
+   Lorem ipsum.
+   #+END_QUOTE
+
+   #+BEGIN_EXAMPLE
+     Debugger entered--Lisp error: (void-function λ)
+       (λ nil (define-key org-mode-map (kbd "C-c C-x C-s") (quote org-mode-src-skel)) (define-key org-mode-map (kbd "C-c C-x C-q") (quote org-mode-quote-skel)) (define-key org-mode-map (kbd "C-c C-x C-e") (quote org-mode-example-skel)))
+       (add-hook (quote org-mode-hook) (λ nil (define-key org-mode-map (kbd "C-c C-x C-s") (quote org-mode-src-skel)) (define-key org-mode-map (kbd "C-c C-x C-q") (quote org-mode-quote-skel)) (define-key org-mode-map (kbd "C-c C-x C-e") (quote org-mode-example-skel))))
+       eval((add-hook (quote org-mode-hook) (λ nil (define-key org-mode-map (kbd "C-c C-x C-s") (quote org-mode-src-skel)) (define-key org-mode-map (kbd "C-c C-x C-q") (quote org-mode-quote-skel)) (define-key org-mode-map (kbd "C-c C-x C-e") (quote org-mode-example-skel)))) nil)
+       eval-last-sexp-1(nil)
+       eval-last-sexp(nil)
+       call-interactively(eval-last-sexp nil nil)   
+   #+END_EXAMPLE
+
+* Scheme
+  This is how you map a list of integers to squares. Org mode section
+  [[Scheme]]. Used key binding =C-c C-x C-s=. See [[file:~/.emacs.d/init.el][init.el]] (that was
+  used to setup the emacs starter kit).
+
+   #+BEGIN_SRC scheme
+     (map (lambda (x) (* x x)) (iota 1000))
+     
+   #+END_SRC
+
+
+  =C-c '= opens the source block in another buffer.
+
+  Exported this using M-x org-export...html-open
+  C-u C-c C-l [[http:orgmode.org/manual/Handling-links.html][Link to doc for inserting links]]
+
+  http://orgmode.org/manual/Handling-links.html
+
+* Key commands
+
+** [[http://orgmode.org/manual/Visibility-cycling.html][Visibility cycling]]
+
+  =ctrl-u ctrl-u ctrl-u TAB= opens all sections in the document
+  =ctrl-u ctrl-u TAB= closes all sections in the org document
+
+
+** [[http://orgmode.org/manual/Plain-lists.html#Plain-lists][Lists]]
+   Unordered list:
+   - guns
+   - lawyers
+   - money
+       
+   Ordered list:
+   1. feet position
+   2. Alt Enter to get here after 1. bla bla bla
+   3. hook grip
+   4. lift
+     
+   Definition list:
+   - =C-u C-u C-u TAB= :: Shows all sections
+   - =C-u C-u TAB= :: Hides all sections
+* Exporting source
+  #+BEGIN_SRC scheme :tangle square.scm
+    (map (lambda (x) (* x x)) (iota 10))
+  #+END_SRC
+
+  Run =M-x org-babel-tangle= to export the sources.
+* SICP exercise example
+  These are my notes on how I came up with this elegant solution . . .
+
+  #+BEGIN_SRC scheme :tangle 4.1.scm
+    ;;; This is what I did always in red
+    
+    (display "My solution.")
+    
+  #+END_SRC
+
+How to work with org-mode by Albert Hoenigmann
+* Things you can do with orgmode
+  Things:
+  1. Sections with * or ** then tab to close and open
+  2. Org mode file .org
+  3. 
+  
+  
+ 
+* TODOs
+  Change status of TODO: =C-c C-t=.

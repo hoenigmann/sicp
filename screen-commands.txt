@@ -1,0 +1,22 @@
+   48  which screen
+   49  screen
+   52  screen -ls
+   53  screen -ls
+   63  echo new screen
+   67  screen -x
+   78  screen -ls
+   79  screen
+   80  screen -S sicp
+   81  sudo chmod +s /usr/bin/screen
+   82  screen -S sicp
+  103  screen exit
+  116  screen
+  403  screen -x
+  404  screen -x
+  426  screen -x
+  452  screen exit
+  496  screen
+  498  screen -T xterm-256color
+  504  history > grep screen
+  505  history | grep screen
+  506  history | grep screen > screen-commands.txt

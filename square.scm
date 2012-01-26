@@ -1,2 +1,2 @@
- (define (square x)
-   (* x x))
+
+(map (lambda (x) (* x x)) (iota 10))

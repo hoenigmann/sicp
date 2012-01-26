@@ -19,7 +19,11 @@
        (cons low (enumerate-interval (+ low 1) high)))) 
   
  (define (flatmap proc seq) 
-   (accumulate append nil (map proc seq))) 
+   (accumulate append nil (map proc seq)))
+
+(define (square x)
+  (* x x)
+  (more))
   
  (define (prime? x) 
    (define (test divisor) 
