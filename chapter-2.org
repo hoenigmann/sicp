@@ -23,18 +23,29 @@ Going to try doing the rest of chapter 2 in org-mode.
   function?
 * 2.42 Problem
   #+BEGIN_SRC scheme :tangle n-queens.scm
+    (load "signals.scm")
+    
     (define (adjoin-position row col safes)
       (cons row safes))
     
     (define (empty-board)
       '())
     
-    (define (safe? col positions)
-      (define (diag-safe? col positions)
-        (let ((first (car positions)))
-          (map
-           (lambda (x) (= (+  ) (+  ))))))
-      (diag-safe? col positions))
+    (define (safe-diagonals? col positions board-size)
+      
+      (define (iter  result og-col og-row col rest-positions)
+        (iter (not (or result (=
+                               (abs (- og-col col))
+                               (abs (- og-row (car rest-positions))))))
+              og-col og-row (- col 1) (cdr positions)))
+      (iter #f col (- col 1) (car positions) (cdr positions)))
+    
+    (define (safe-rows? col positions)
+      (let ((possible-row (car positions)))
+        (accumulate
+         (lambda (x rest) (and (not (= possible-row x)) rest))
+         #t
+         (cdr positions))))
     
     (define (queens board-size)
       (define (queen-cols k)
@@ -57,6 +68,15 @@ Going to try doing the rest of chapter 2 in org-mode.
     
     ;;; rest-of-queens is a way to place k − 1 queens in the first k − 1 columns
     
+    (define test-positions (list 4 3 3 3 3 4))
+    (safe-rows? 4 test-positions)
+    (define test-safe (list 4 3 2 1))
+    (safe-rows? 4 test-safe)
+    (define test-diag (list 5 4 3 2 1))
+    (safe-diagonals? 5 test-diag)
+    
+    
+    (RESTART 1)
     
   #+END_SRC
 
