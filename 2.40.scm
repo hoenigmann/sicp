@@ -22,7 +22,7 @@
    (accumulate append nil (map proc seq)))
 
 (define (square x)
-  (* x x)
+   (* x x)
   (more))
   
  (define (prime? x) 
